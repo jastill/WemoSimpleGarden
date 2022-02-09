@@ -2,10 +2,10 @@
 #include <Adafruit_NeoPixel.h>
 
 #define LED_PIN D4
-#define NUMPIXELS 4
+#define NUMPIXELS 12
 
 #define BLUE pixels.Color(0, 0, 255)
-#define GREEN pixels.Color(0, 255, 255)
+#define GREEN pixels.Color(0, 255, 0)
 #define RED pixels.Color(255, 0, 0)
 #define OFF pixels.Color(0, 0, 0)
 
@@ -24,7 +24,7 @@ void setLedsOff()
   Serial.println("Setting LEDs OF");
   for (int i = 0; i < NUMPIXELS; i++)
   {
-    pixels.setPixelColor(0, OFF);
+    pixels.setPixelColor(i, OFF);
   }
   pixels.show();
 }
@@ -34,7 +34,7 @@ void setLedsRed()
   Serial.println("Setting LEDs RED");
   for (int i = 0; i < NUMPIXELS; i++)
   {
-    pixels.setPixelColor(0, RED);
+    pixels.setPixelColor(i, RED);
   }
   pixels.show();
 }
@@ -44,7 +44,7 @@ void setLedsGreen()
   Serial.println("Setting LEDs GREEN");
   for (int i = 0; i < NUMPIXELS; i++)
   {
-    pixels.setPixelColor(0, GREEN);
+    pixels.setPixelColor(i, GREEN);
   }
   pixels.show();
 }
@@ -54,7 +54,7 @@ void setLedsBlue()
   Serial.println("Setting LEDs BLUE");
   for (int i = 0; i < NUMPIXELS; i++)
   {
-    pixels.setPixelColor(0, BLUE);
+    pixels.setPixelColor(i, BLUE);
   }
   pixels.show();
 }
